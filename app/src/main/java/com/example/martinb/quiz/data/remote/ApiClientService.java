@@ -19,6 +19,8 @@ public class ApiClientService {
 
     ApiClient apiClient;
 
+    final String API_KEY = "qfhx9vnxf9z657956575g8pd";
+
     public ApiClientService() {
 
 
@@ -40,6 +42,6 @@ public class ApiClientService {
     }
 
     public Single<Tournament> getTournament(){
-        return apiClient.getTournament();
+        return apiClient.getTournament(API_KEY);
     }
 }
