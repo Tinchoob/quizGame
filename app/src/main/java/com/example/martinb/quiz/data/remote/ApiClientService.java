@@ -8,15 +8,5 @@ import com.example.martinb.quiz.model.Player;
 
 public class ApiClientService {
 
-    ApiClient apiClient = new ApiClient() {
 
-
-        @Override
-        public Player getPlayer() {
-            return new Player(1,"Leo Messi","0");
-        }
-
-
-
-    };
 }
