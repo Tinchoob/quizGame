@@ -1,19 +1,22 @@
 package com.example.martinb.quiz;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements onSelectedImage,DialogFragment.OnFragmentInteractionListener  {
 
     @BindView(R.id.Text_imageToChoose)
     TextView Description;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.image_two)
     ImageView imageTwo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +38,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.image_one)
-    void changeImage(){
+    void verifyImageOne() {
 
-        Picasso.get().load("https://cdn2.uvnimg.com/dims4/default/4c96f05/2147483647/thumbnail/1240x698/quality/75/?url=https%3A%2F%2Fcdn3.uvnimg.com%2Ff7%2F6f%2Fa2389cdc4b2fa5cbdaf33584a776%2Fgettyimages-642913512.jpg")
-                .into(imageOne);
+        if (verifyChose()) {
+            DialogFragment dialogFragment = new DialogFragment();
+            dialogFragment.setListener(this);
+            dialogFragment.show(getSupportFragmentManager(), "this is a tag");
+        }
     }
 
+    @OnClick(R.id.image_two)
+    void verifyImageTwo(){
+        if(!verifyChoseFalse()){
+            Toast.makeText(getApplicationContext(),"Mal",Toast.LENGTH_SHORT).show();
+        }
 
+        }
+
+
+    private boolean verifyChose(){
+        return true;
+    }
+
+    private boolean verifyChoseFalse(){
+        return false;
+    }
+
+    @Override
+    public void response(String response) {
+        if(response.equals("OK"))
+            Toast.makeText(getApplicationContext(),"Bien",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
