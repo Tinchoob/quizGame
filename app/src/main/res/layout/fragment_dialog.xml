@@ -4,16 +4,25 @@
     android:layout_height="match_parent"
     tools:context="com.example.martinb.quiz.DialogFragment">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:paddingBottom="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Good work! Thats Correct, tap de button to continue"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <Button
         android:id="@+id/taphere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tap here" />
+
+    </LinearLayout>
 
 </FrameLayout>

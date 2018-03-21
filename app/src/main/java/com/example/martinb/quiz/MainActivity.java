@@ -12,6 +12,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.Toast;
 
 
+import com.squareup.picasso.Picasso;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,7 +36,11 @@ public class MainActivity extends AppCompatActivity implements onSelectedImage,D
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        //HIPER HARD CODED
 
+        Picasso.get().load("http://media.libero.pe/large/libero/imagen/2018/01/07/noticia-lionel-messi.jpg").into(imageTwo);
+        Picasso.get().load("http://442.perfil.com/wp-content/uploads/2017/08/0827_atleticotucuman_godoycruz_g_tel.jpg").into(imageOne);
+        //
     }
 
     @OnClick(R.id.image_one)
