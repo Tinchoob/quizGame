@@ -9,11 +9,13 @@ public class Player {
     private int MatchPlayed;
     private String name;
     private String UrlToImage;
+    private int Redcards;
 
-    public Player(int MatchPlayed,String name, String UrlToImage){
+    public Player(int MatchPlayed,String name, String UrlToImage, int redcards){
         this.MatchPlayed = MatchPlayed;
         this.name = name;
         this.UrlToImage = UrlToImage;
+        this.Redcards = redcards;
     }
 
 
@@ -41,5 +43,11 @@ public class Player {
         UrlToImage = urlToImage;
     }
 
+    public int getRedcards() {
+        return Redcards;
+    }
 
+    public void setRedcards(int redcards) {
+        Redcards = redcards;
+    }
 }
