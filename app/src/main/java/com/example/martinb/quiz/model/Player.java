@@ -8,7 +8,7 @@ public class Player {
 
     private String urlToImage;
     private String name;
-    private int popularity
+    private int popularity;
 
     public Player(String urlToImage, String name, int popularity){
         this.urlToImage = urlToImage;

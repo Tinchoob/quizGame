@@ -49,8 +49,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean verifyPopularity(){
-
-    }
-
 }
