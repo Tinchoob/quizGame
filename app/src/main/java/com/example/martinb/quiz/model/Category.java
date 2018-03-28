@@ -1,5 +1,8 @@
-
 package com.example.martinb.quiz.model;
+
+/**
+ * Created by martinb on 3/21/2018.
+ */
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

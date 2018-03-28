@@ -17,6 +17,9 @@ import java.util.Random;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements onSelectedImage, DialogFragment.OnFragmentInteractionListener {
 
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements onSelectedImage, 
         Picasso.get().load(player2.getUrlToImage()).into(imageOne);
 
         Description.setText(Question);
+
 
     }
 
