@@ -9,15 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.martinb.quiz.model.Player;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 /**
@@ -42,6 +35,8 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
 
 
 
+
+
     public DialogFragment() {
         // Required empty public constructor
     }
@@ -54,6 +49,7 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
     public static DialogFragment newInstance() {
         DialogFragment fragment = new DialogFragment();
         Bundle args = new Bundle();
+
         return fragment;
     }
 
@@ -65,7 +61,6 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -74,7 +69,6 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
 
         View view = inflater.inflate(R.layout.fragment_dialog, container, false);
         ButterKnife.bind(this,view);
-
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

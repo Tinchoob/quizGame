@@ -1,7 +1,6 @@
 package com.example.martinb.quiz.data.remote;
 
-import com.example.martinb.quiz.model.Player;
-import com.example.martinb.quiz.model.Tournament;
+import com.example.martinb.quiz.model.Post;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -17,12 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClientService {
 
-    ApiClient apiClient;
+    private ApiClient apiClient = null;
+    private ApiClientService instance = null;
 
     final String API_KEY = "qfhx9vnxf9z657956575g8pd";
 
     public ApiClientService() {
-
 
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -38,10 +37,10 @@ public class ApiClientService {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         apiClient = retrofit.create(ApiClient.class);
-
     }
 
-    public Single<Tournament> getTournament(){
+
+    public Single<Post> getTournament(){
         return apiClient.getTournament(API_KEY);
     }
 }

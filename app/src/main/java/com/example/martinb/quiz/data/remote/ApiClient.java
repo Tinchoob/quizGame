@@ -1,7 +1,6 @@
 package com.example.martinb.quiz.data.remote;
 
-import com.example.martinb.quiz.model.Player;
-import com.example.martinb.quiz.model.Tournament;
+import com.example.martinb.quiz.model.Post;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
@@ -16,7 +15,7 @@ public interface ApiClient {
     final String BASE_URL = "https://api.sportradar.us/soccer-t3/eu/";
 
     @GET("en/tournaments.json")
-    Single<Tournament> getTournament(@Query("api_key")String API_KEY);
+    Single<Post> getTournament(@Query("api_key")String API_KEY);
 
 
 }
