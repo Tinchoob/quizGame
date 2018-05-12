@@ -10,7 +10,10 @@ import android.widget.Toast;
 import com.example.martinb.quiz.data.remote.ApiClientService;
 import com.example.martinb.quiz.model.Player;
 import com.example.martinb.quiz.model.Post;
+import com.example.martinb.quiz.model.TeamProfile;
+import com.example.martinb.quiz.model.TournamentInfo;
 
+import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements onSelectedImage, 
             @Override
             public void onSuccess(Post value) {
                 Description.setText(value.getTournaments().get(0).getName());
+                getGroups(value.getTournaments().get(10).getId());
             }
 
             @Override
@@ -117,4 +121,49 @@ public class MainActivity extends AppCompatActivity implements onSelectedImage, 
 
     }
 
+    public void getGroups(String tournamentId) {
+        compositeDisposable.add(apiClientService.getGroups(tournamentId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(getGroupsObserver())
+        );
+    }
+
+    private DisposableSingleObserver<TournamentInfo> getGroupsObserver() {
+        return new DisposableSingleObserver<TournamentInfo>() {
+            @Override
+            public void onSuccess(TournamentInfo value) {
+                getTeamsProfile(value.getGroups().get(0).getTeams().get(5).getId());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+        };
+
+    }
+
+    public void getTeamsProfile(String teamId){
+        compositeDisposable.add(apiClientService.getTeamsProfile(teamId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(getTeamsProfileObserver())
+        );
+    }
+
+    private DisposableSingleObserver<TeamProfile> getTeamsProfileObserver() {
+        return new DisposableSingleObserver<TeamProfile>() {
+            @Override
+            public void onSuccess(TeamProfile value) {
+                value.getPlayers().get(10);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+        };
+
+    }
 }

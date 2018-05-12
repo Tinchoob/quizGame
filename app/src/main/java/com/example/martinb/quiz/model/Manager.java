@@ -4,7 +4,7 @@ package com.example.martinb.quiz.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Team_ {
+public class Manager {
 
     @SerializedName("id")
     @Expose
@@ -12,15 +12,12 @@ public class Team_ {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("country")
+    @SerializedName("nationality")
     @Expose
-    private String country;
+    private String nationality;
     @SerializedName("country_code")
     @Expose
     private String countryCode;
-    @SerializedName("abbreviation")
-    @Expose
-    private String abbreviation;
 
     public String getId() {
         return id;
@@ -38,12 +35,12 @@ public class Team_ {
         this.name = name;
     }
 
-    public String getCountry() {
-        return country;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public String getCountryCode() {
@@ -52,14 +49,6 @@ public class Team_ {
 
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
-    }
-
-    public String getAbbreviation() {
-        return abbreviation;
-    }
-
-    public void setAbbreviation(String abbreviation) {
-        this.abbreviation = abbreviation;
     }
 
 }

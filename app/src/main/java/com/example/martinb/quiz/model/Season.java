@@ -14,10 +14,10 @@ public class Season {
     private String name;
     @SerializedName("statistics")
     @Expose
-    private Statistics_ statistics;
+    private Statistics statistics;
     @SerializedName("team")
     @Expose
-    private Team__ team;
+    private Team team;
     @SerializedName("tournament")
     @Expose
     private Tournament tournament;
@@ -41,19 +41,19 @@ public class Season {
         this.name = name;
     }
 
-    public Statistics_ getStatistics() {
+    public Statistics getStatistics() {
         return statistics;
     }
 
-    public void setStatistics(Statistics_ statistics) {
+    public void setStatistics(Statistics statistics) {
         this.statistics = statistics;
     }
 
-    public Team__ getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Team__ team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 

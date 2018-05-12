@@ -14,7 +14,7 @@ public class Role {
     private String active;
     @SerializedName("team")
     @Expose
-    private Team_ team;
+    private Team team;
     @SerializedName("start_date")
     @Expose
     private String startDate;
@@ -41,11 +41,11 @@ public class Role {
         this.active = active;
     }
 
-    public Team_ getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Team_ team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 
