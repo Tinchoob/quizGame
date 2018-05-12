@@ -1,5 +1,6 @@
 package com.example.martinb.quiz.data.remote;
 
+import com.example.martinb.quiz.model.PlayerProfile;
 import com.example.martinb.quiz.model.Post;
 import com.example.martinb.quiz.model.TeamProfile;
 import com.example.martinb.quiz.model.TournamentInfo;
@@ -55,5 +56,9 @@ public class ApiClientService {
 
     public Single<TeamProfile> getTeamsProfile(String teamId){
         return apiClient.getTeamsProfile(teamId,API_KEY);
+    }
+
+    public Single<PlayerProfile> getPlayerProfile(String playerId){
+        return apiClient.getPlayerProfile(playerId,API_KEY);
     }
 }

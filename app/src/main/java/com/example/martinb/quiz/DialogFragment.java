@@ -30,7 +30,7 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private onSelectedImage onSelectedImage;
+    private DataSendContract DataSendContract;
     private OnFragmentInteractionListener mListener;
 
 
@@ -72,15 +72,14 @@ public class DialogFragment extends android.support.v4.app.DialogFragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onSelectedImage.response("OK");
                 dismiss();
             }
         });
         return view;
     }
 
-    public void setListener(onSelectedImage onSelectedImage){
-        this.onSelectedImage = onSelectedImage;
+    public void setListener(DataSendContract DataSendContract){
+        this.DataSendContract = DataSendContract;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

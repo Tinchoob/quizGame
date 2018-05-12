@@ -1,5 +1,6 @@
 package com.example.martinb.quiz.data.remote;
 
+import com.example.martinb.quiz.model.PlayerProfile;
 import com.example.martinb.quiz.model.Post;
 import com.example.martinb.quiz.model.Sport;
 import com.example.martinb.quiz.model.TeamProfile;
@@ -30,5 +31,8 @@ public interface ApiClient {
 
     @GET("en/teams/{idTeam}/profile.json")
     Single<TeamProfile> getTeamsProfile(@Path("idTeam")String idTeam, @Query("api_key")String API_KEY);
+
+    @GET("en/players/{idPlayer}/profile.json")
+    Single<PlayerProfile> getPlayerProfile(@Path("idPlayer")String idPlayer, @Query("api_key")String API_KEY);
 
 }
